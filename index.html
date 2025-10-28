@@ -1,13 +1,175 @@
-<!DOCTYPE html>
-<html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Emo Meo Basic</title>
+  <title>Global Food Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 id="heading">!</h1>
-  <img id="catImage" src="images/cat.png" alt="Meo" width="600">
+  <!-- Sticky Header -->
+  <header id="topHeader">
+    <h1>Global Food Store</h1>
+    <input type="text" id="searchInput" placeholder="Search for a dish...">
+    <div id="cartContainer">
+      <span id="cartCount">0</span>
+      <span id="cart">🛒</span>
+      <span id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- Product Container -->
+  <main id="productContainer">
+    <!-- 20 món ăn -->
+    <div class="product-card" data-name="Pizza" data-desc="Classic Italian pizza with cheese and tomato sauce" data-price="12">
+      <img src="images/placeholder.png" alt="Pizza">
+      <h3>Pizza</h3>
+      <p class="description">Classic Italian pizza with cheese and tomato sauce</p>
+      <p class="price">$12</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Sushi" data-desc="Fresh Japanese sushi rolls with salmon and rice" data-price="15">
+      <img src="images/placeholder.png" alt="Sushi">
+      <h3>Sushi</h3>
+      <p class="description">Fresh Japanese sushi rolls with salmon and rice</p>
+      <p class="price">$15</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Burger" data-desc="American beef burger with lettuce, tomato, and cheese" data-price="10">
+      <img src="images/placeholder.png" alt="Burger">
+      <h3>Burger</h3>
+      <p class="description">American beef burger with lettuce, tomato, and cheese</p>
+      <p class="price">$10</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Paella" data-desc="Spanish rice dish with seafood and saffron" data-price="18">
+      <img src="images/placeholder.png" alt="Paella">
+      <h3>Paella</h3>
+      <p class="description">Spanish rice dish with seafood and saffron</p>
+      <p class="price">$18</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Tacos" data-desc="Mexican corn tortillas with beef, cheese, and salsa" data-price="9">
+      <img src="images/placeholder.png" alt="Tacos">
+      <h3>Tacos</h3>
+      <p class="description">Mexican corn tortillas with beef, cheese, and salsa</p>
+      <p class="price">$9</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Croissant" data-desc="French buttery flaky pastry" data-price="4">
+      <img src="images/placeholder.png" alt="Croissant">
+      <h3>Croissant</h3>
+      <p class="description">French buttery flaky pastry</p>
+      <p class="price">$4</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Ramen" data-desc="Japanese noodle soup with pork and egg" data-price="13">
+      <img src="images/placeholder.png" alt="Ramen">
+      <h3>Ramen</h3>
+      <p class="description">Japanese noodle soup with pork and egg</p>
+      <p class="price">$13</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Pad Thai" data-desc="Thai stir-fried rice noodles with shrimp" data-price="14">
+      <img src="images/placeholder.png" alt="Pad Thai">
+      <h3>Pad Thai</h3>
+      <p class="description">Thai stir-fried rice noodles with shrimp</p>
+      <p class="price">$14</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Dumplings" data-desc="Chinese steamed dumplings with pork" data-price="8">
+      <img src="images/placeholder.png" alt="Dumplings">
+      <h3>Dumplings</h3>
+      <p class="description">Chinese steamed dumplings with pork</p>
+      <p class="price">$8</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Falafel" data-desc="Middle Eastern chickpea balls" data-price="7">
+      <img src="images/placeholder.png" alt="Falafel">
+      <h3>Falafel</h3>
+      <p class="description">Middle Eastern chickpea balls</p>
+      <p class="price">$7</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Curry" data-desc="Indian curry with chicken and spices" data-price="11">
+      <img src="images/placeholder.png" alt="Curry">
+      <h3>Curry</h3>
+      <p class="description">Indian curry with chicken and spices</p>
+      <p class="price">$11</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Bratwurst" data-desc="German sausage with mustard" data-price="9">
+      <img src="images/placeholder.png" alt="Bratwurst">
+      <h3>Bratwurst</h3>
+      <p class="description">German sausage with mustard</p>
+      <p class="price">$9</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Poutine" data-desc="Canadian fries with gravy and cheese curds" data-price="8">
+      <img src="images/placeholder.png" alt="Poutine">
+      <h3>Poutine</h3>
+      <p class="description">Canadian fries with gravy and cheese curds</p>
+      <p class="price">$8</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Kimchi" data-desc="Korean fermented spicy cabbage" data-price="5">
+      <img src="images/placeholder.png" alt="Kimchi">
+      <h3>Kimchi</h3>
+      <p class="description">Korean fermented spicy cabbage</p>
+      <p class="price">$5</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Gelato" data-desc="Italian ice cream" data-price="6">
+      <img src="images/placeholder.png" alt="Gelato">
+      <h3>Gelato</h3>
+      <p class="description">Italian ice cream</p>
+      <p class="price">$6</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Banh Xeo" data-desc="Vietnamese crispy pancake with shrimp and pork" data-price="9">
+      <img src="images/placeholder.png" alt="Banh Xeo">
+      <h3>Banh Xeo</h3>
+      <p class="description">Vietnamese crispy pancake with shrimp and pork</p>
+      <p class="price">$9</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Shakshuka" data-desc="Middle Eastern eggs poached in tomato sauce" data-price="10">
+      <img src="images/placeholder.png" alt="Shakshuka">
+      <h3>Shakshuka</h3>
+      <p class="description">Middle Eastern eggs poached in tomato sauce</p>
+      <p class="price">$10</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Empanadas" data-desc="Latin American baked or fried pastry with filling" data-price="7">
+      <img src="images/placeholder.png" alt="Empanadas">
+      <h3>Empanadas</h3>
+      <p class="description">Latin American baked or fried pastry with filling</p>
+      <p class="price">$7</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Churros" data-desc="Spanish fried-dough pastry sprinkled with sugar" data-price="5">
+      <img src="images/placeholder.png" alt="Churros">
+      <h3>Churros</h3>
+      <p class="description">Spanish fried-dough pastry sprinkled with sugar</p>
+      <p class="price">$5</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+    <div class="product-card" data-name="Pho" data-desc="Vietnamese noodle soup with beef and herbs" data-price="12">
+      <img src="images/placeholder.png" alt="Pho">
+      <h3>Pho</h3>
+      <p class="description">Vietnamese noodle soup with beef and herbs</p>
+      <p class="price">$12</p>
+      <button class="addToCart">Add to Cart</button>
+    </div>
+  </main>
+
+  <!-- Cart Popup -->
+  <div id="cartPopup">
+    <h2>Your Cart</h2>
+    <ul id="cartList"></ul>
+    <p>Total: $<span id="cartTotal">0</span></p>
+    <button id="closeCart">Close</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

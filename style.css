@@ -1,23 +1,219 @@
+/* Reset cơ bản */
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #000000; /* nền hồng nhạt */
   margin: 0;
-  padding-top: 100px;
+  background-color: #fefefe;
 }
 
-h1 {
-  color: #ffffff; /* tím đậm */
-  text-shadow: 2px 2px 5px #aaa;
-  margin-bottom: 20px;
-  transition: transform 0.3s;
+/* Sticky Header */
+#topHeader {
+  position: fixed;         /* luôn ở trên cùng */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #0078D7;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* Mèo nhún khi hover */
-#catImage {
-  transition: transform 0.3s;
+#topHeader h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
-#catImage:hover {
-  transform: scale(1.1) rotate(-5deg);
+#topHeader input {
+  width: 60%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+#cartContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+#cartCount {
+  background-color: #ff6f61;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Tránh nội dung bị che bởi header */
+#productContainer {
+  margin-top: 80px; /* chiều cao header */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Product Card */
+.product-card {
+  width: 220px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 10px 0 0 0;
+  font-size: 20px;
+}
+
+.product-card .description {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+  display: none;
+}
+
+.product-card:hover .description {
+  display: block;
+}
+
+.product-card .price {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.product-card button.addToCart {
+  background-color: #0078D7;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.product-card button.addToCart:hover {
+  background-color: #005A9E;
+  transform: scale(1.1);
+}
+
+@media(max-width: 600px){
+  .product-card {
+    width: 90%;
+  }
+}
+
+/* Cart Sidebar */
+#cartPopup {
+  position: fixed;
+  top: 0;
+  right: -350px;          /* ẩn bên phải */
+  width: 350px;
+  height: 100%;
+  background: white;
+  border-left: 1px solid #7e7d7d;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s ease;
+  z-index: 1500;
+  overflow: hidden;       /* ẩn overflow tổng thể */
+}
+
+#cartPopup.active {
+  right: 0;
+}
+
+/* Header giỏ hàng */
+#cartPopup h2 {
+  margin-top: 10;
+  text-align: center;
+  flex-shrink: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Danh sách món cuộn */
+#cartPopup ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  flex: 1;                /* chiếm không gian còn lại */
+  overflow-y: auto;       /* cuộn được */
+}
+
+/* Item */
+#cartPopup li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+#cartPopup li img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+#cartPopup li .item-controls button {
+  margin: 0 3px;
+  padding: 3px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #0078D7;
+  color: white;
+}
+
+#cartPopup li .item-controls button:hover {
+  background-color: #005A9E;
+}
+
+/* Nút Close luôn ở đáy */
+#cartPopup button#closeCart {
+  position: absolute; 
+  bottom: 10;      /* đẩy xuống đáy */
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#cartPopup button#closeCart:hover {
+  background-color: #e55b50;
+}
+
+/* Clone image animation khi thêm món */
+.flying-img {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  z-index: 2000;   /* > z-index của sidebar */
+  pointer-events: none;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  opacity: 1;
 }
