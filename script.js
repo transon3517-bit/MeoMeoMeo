@@ -1,23 +1,22 @@
-const button = document.getElementById("changeColorBtn");
-const heading = document.querySelector("h1");
+const heading = document.getElementById("heading");
 
-const color =[
-  {hex: "#f8b400", name: "Yellow"},
-  {hex: "#f44336", name: "Red"},
-  {hex: "#4caf50", name: "Green"},
-  {hex: "#2196f3", name: "Blue"},
-  {hex: "#9c27b0", name: "Purple"}
+// Danh sách màu với tên
+const colors = [
+  {hex: "#ff00c3ff", name: "Yellow"},
+  {hex: "#e43e99ff", name: "Red"},
+  {hex: "#841775ff", name: "Green"},
+  {hex: "#fe0094ff", name: "Purple"}
 ];
 
-button.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * color.length);
-  const randomColor = color[randomIndex];
-
+// Hàm đổi màu nền
+function changeBackgroundColor() {
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  const randomColor = colors[randomIndex];
   document.body.style.backgroundColor = randomColor.hex;
+  heading.textContent = `It is ${randomColor.name}!`;
+}
 
-   heading.textContent = `It is ${randomColor.name}!`;
-  alert("Wow! Did you just changed the color? Let see what color it is!");
-
+// Khi load trang, bắt đầu đổi màu liên tục
+window.addEventListener("load", () => {
+  setInterval(changeBackgroundColor, 600); // đổi màu mỗi 0.6 giây
 });
-
-
