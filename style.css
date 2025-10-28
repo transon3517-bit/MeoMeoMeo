@@ -5,15 +5,51 @@ body {
   margin-top: 100px;
 }
 
-button {
+#changeColorBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;       /* Kích thước chữ lớn hơn */
+  padding: 50px 50px;    /* Kích thước nút lớn hơn */
   background-color: #0078D7;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
+#changeColorBtn:hover {
   background-color: #005A9E;
+  transform: scale(1.1);  /* Phóng to nút khi rê chuột */
+}
+
+h1 {
+  position: absolute;
+  top: 10px;
+  right: 40%;
+  color: #000000;
+  text-shadow: 2px 2px 5px #000';
+}
+
+p {
+  position: absolute;
+  top: 50px;
+  right: 290px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: scale(1.1);
 }
