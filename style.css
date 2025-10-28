@@ -3,13 +3,12 @@ body {
   text-align: center;
   background-color: white;
   margin-top: 100px;
-  transition: background-color 1s ease;
+  transition: background-color 0.6s ease;
 }
 
 #changeColorBtn {
-  position: center;
-  font-size: 24px;       /* Kích thước chữ lớn hơn */
-  padding: 50px 50px;    /* Kích thước nút lớn hơn */
+  font-size: 20px;       /* Kích thước chữ lớn hơn */
+  padding: 12px 24px;    /* Kích thước nút */
   background-color: #0078D7;
   color: white;
   border: none;
@@ -24,7 +23,7 @@ body {
 }
 
 h1 {
-  position: center;;
-  color: #000000;
-  text-shadow: 2px 2px 5px #000';
+  color: #FFFFFF;
+  text-shadow: 2px 2px 5px #000;
+  margin-bottom: 24px;
 }
