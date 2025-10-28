@@ -1,29 +1,23 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: white;
-  margin-top: 100px;
-  transition: background-color 1s ease;
-}
-
-#changeColorBtn {
-  font-size: 20px;       /* scale of button text */
-  padding: 12px 24px;    /* scale of button */
-  background-color: #0078D7;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-#changeColorBtn:hover {
-  background-color: #005A9E;
-  transform: scale(1.1);  /* zoom button when a mouse moveto it */
+  background-color: #000000; /* nền hồng nhạt */
+  margin: 0;
+  padding-top: 100px;
 }
 
 h1 {
-  color: #FFFFFF;
-  text-shadow: 2px 2px 5px #000;
-  margin-bottom: 24px;
+  color: #ffffff; /* tím đậm */
+  text-shadow: 2px 2px 5px #aaa;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+/* Mèo nhún khi hover */
+#catImage {
+  transition: transform 0.3s;
+}
+
+#catImage:hover {
+  transform: scale(1.1) rotate(-5deg);
 }
