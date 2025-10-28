@@ -1,7 +1,7 @@
 // Try to find the heading; fall back to the first H1 if id is missing
 const heading = document.getElementById("heading") || document.querySelector('h1');
 
-// Danh sách màu với tên (names adjusted to match colors)
+// list of color to change (names adjusted to match colors)
 const colors = [
   {hex: "#ff00c3ff", name: "Magenta"},
   {hex: "#e43e99ff", name: "Rose"},
@@ -21,11 +21,11 @@ function changeBackgroundColor() {
 
 // Hook up the click button to change color once
 const changeBtn = document.getElementById('changeColorBtn');
-if (changeBtn) {
+if (changeBtn) {-
   changeBtn.addEventListener('click', changeBackgroundColor);
 }
 
-// Khi load trang, bắt đầu đổi màu liên tục (interval >= transition duration)
+// when reload page start change color (interval >= transition duration)
 window.addEventListener("load", () => {
-  setInterval(changeBackgroundColor, 1200); // đổi màu mỗi 1.2 giây
+  setInterval(changeBackgroundColor, 600); // change every 600ms
 });

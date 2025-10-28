@@ -3,12 +3,12 @@ body {
   text-align: center;
   background-color: white;
   margin-top: 100px;
-  transition: background-color 0.6s ease;
+  transition: background-color 1s ease;
 }
 
 #changeColorBtn {
-  font-size: 20px;       /* Kích thước chữ lớn hơn */
-  padding: 12px 24px;    /* Kích thước nút */
+  font-size: 20px;       /* scale of button text */
+  padding: 12px 24px;    /* scale of button */
   background-color: #0078D7;
   color: white;
   border: none;
@@ -19,7 +19,7 @@ body {
 
 #changeColorBtn:hover {
   background-color: #005A9E;
-  transform: scale(1.1);  /* Phóng to nút khi rê chuột */
+  transform: scale(1.1);  /* zoom button when a mouse moveto it */
 }
 
 h1 {
